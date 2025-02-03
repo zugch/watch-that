@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import logging
 import os
+import hashlib
 from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.triggers.cron import CronTrigger
 
@@ -25,6 +26,7 @@ def watch_that():
         
         if element:
             logging.info(f"Gefundenes Element ({ELEMENT_SELECTOR}): {element.text.strip()}")
+            logging.info(f"Hash des Resultats: {hashlib.sha256(element.encode()).hexdigest()}")
         else:
             logging.warning(f"Kein Element mit dem Selektor '{ELEMENT_SELECTOR}' gefunden.")
     except requests.RequestException as e:
