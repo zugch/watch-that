@@ -1,7 +1,7 @@
 # watch-that
 ## create image
 ```
-docker build -t watch-that .
+docker build -t watch-that -f docker/Dockerfile .
 ```
 ## run container (example)
 ```
