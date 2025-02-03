@@ -23,3 +23,5 @@ Bring your container back to the front
 ```
 docker attach watch-that-watch
 ```
+## credits and documentation
+https://www.crummy.com/software/BeautifulSoup/bs4/doc/
