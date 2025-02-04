@@ -25,7 +25,8 @@ def watch_that():
         element = soup.select_one(ELEMENT_SELECTOR)
         
         if element:
-            logging.info(f"Gefundenes Element ({ELEMENT_SELECTOR}): {element.text.strip()}")
+            logging.info(f"Gefundenes Element ({ELEMENT_SELECTOR}): {element}")
+            logging.info(f"Text des Resultats: ({ELEMENT_SELECTOR}): {element.text.strip()}")
             logging.info(f"Hash des Resultats: {hashlib.sha256(element.encode()).hexdigest()}")
         else:
             logging.warning(f"Kein Element mit dem Selektor '{ELEMENT_SELECTOR}' gefunden.")
