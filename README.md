@@ -1,28 +1,8 @@
 # watch-that
-## create image
-```
-docker build -t watch-that -f docker/Dockerfile .
-```
-## run container (example)
-```
-docker run --rm -e SCRAPE_URL="https://example.com" -e ELEMENT_SELECTOR="h1" -e CRON_EXPRESSION="*/1 * * * *" watch-that
-```
-### run container (detached mode and naming)
-Flag ```-d``` for detached mode
+Root project
 
-Name the container with ```--name```
-```
-docker run --rm -d --name watch-that-example -e SCRAPE_URL="https://example.com" -e ELEMENT_SELECTOR="h1" -e CRON_EXPRESSION="*/1 * * * *" watch-that
-docker run --rm -d --name watch-that-watch -e SCRAPE_URL="https://www.uhrzeit.org/atomuhr" -e ELEMENT_SELECTOR=".anzeige" -e CRON_EXPRESSION="*/1 * * * *" watch-that
-```
-Check your running containers with ```ps```
-```
-docker ps
-```
-Bring your container back to the front
-```
-docker attach watch-that-watch
-```
+TODO
+
 Start applications as services (docker-compose.yml)
 ```
 docker-compose up --build
