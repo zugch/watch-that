@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   watch-that-example:
     build: .
