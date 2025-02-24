@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  watch-that-example:
+    build: .
+    container_name: watch-that-example
+    volumes:
+      - .:/app
+    environment:
+      - SCRAPE_URL="https://example.com"
+      - ELEMENT_SELECTOR="h1"
+      - CRON_EXPRESSION="*/1 * * * *"
+    command: ["python", "../src/watch.py", "arg1"]
