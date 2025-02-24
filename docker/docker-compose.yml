@@ -10,4 +10,4 @@ services:
       - SCRAPE_URL="https://example.com"
       - ELEMENT_SELECTOR="h1"
       - CRON_EXPRESSION="*/1 * * * *"
-    command: ["python", "../src/watch.py", "arg1"]
+    command: ["python", "src/watch.py"]
