@@ -1,0 +1,25 @@
+services:
+  watch-that-example:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: watch-that-example
+    volumes:
+      - .:/app
+    environment:
+      - SCRAPE_URL=https://example.com
+      - ELEMENT_SELECTOR=h1
+      - CRON_EXPRESSION=*/1 * * * *
+    command: ["python", "src/watch.py"]
+  watch-that-watch:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: watch-that-watch
+    volumes:
+      - .:/app
+    environment:
+      - SCRAPE_URL=https://www.uhrzeit.org/atomuhr
+      - ELEMENT_SELECTOR=.anzeige
+      - CRON_EXPRESSION=*/2 * * * *
+    command: ["python", "src/watch.py"]
