@@ -1,10 +1,10 @@
 services:
-  watch-that-example-picker:
+  watch-that-picker-example:
     build:
 #      context: .
       context: https://github.com/zugch/watch-that-picker.git
-      dockerfile: docker/Dockerfile
-    container_name: watch-that-example-picker
+#      dockerfile: docker/Dockerfile
+    container_name: watch-that-picker-example
     volumes:
       - .:/app
     environment:
@@ -12,12 +12,12 @@ services:
       - ELEMENT_SELECTOR=h1
       - CRON_EXPRESSION=*/1 * * * *
     command: ["python", "src/watch.py"]
-  watch-that-watch-picker:
+  watch-that-picker-watch:
     build:
 #      context: .
       context: https://github.com/zugch/watch-that-picker.git
-      dockerfile: docker/Dockerfile
-    container_name: watch-that-watch-picker
+#      dockerfile: docker/Dockerfile
+    container_name: watch-that-picker-watch
     volumes:
       - .:/app
     environment:
