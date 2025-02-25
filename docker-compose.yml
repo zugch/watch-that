@@ -1,12 +1,8 @@
 services:
   watch-that-picker-example:
     build:
-#      context: .
       context: https://github.com/zugch/watch-that-picker.git
-#      dockerfile: docker/Dockerfile
     container_name: watch-that-picker-example
-    volumes:
-      - .:/app
     environment:
       - SCRAPE_URL=https://example.com
       - ELEMENT_SELECTOR=h1
@@ -14,12 +10,8 @@ services:
     command: ["python", "src/watch.py"]
   watch-that-picker-watch:
     build:
-#      context: .
       context: https://github.com/zugch/watch-that-picker.git
-#      dockerfile: docker/Dockerfile
     container_name: watch-that-picker-watch
-    volumes:
-      - .:/app
     environment:
       - SCRAPE_URL=https://www.uhrzeit.org/atomuhr
       - ELEMENT_SELECTOR=.anzeige
